@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import bin from "../assets/bin.png";
 import add from "../assets/add.png";
@@ -6,13 +6,12 @@ import minus from "../assets/minus.png";
 
 const Cart = () => {
   const [products, setProducts] = useState(null);
-  //valoarea initiala lui productsInCart este ce se afla in localStorage
+
   const [productsInCart, setProductsInCart] = useState(
     JSON.parse(window.localStorage.getItem("cart"))
   );
   const [totalPrice, setTotalPrice] = useState(0);
 
-  //se face un request api in ambele pg home and cart
   useEffect(() => {
     const fetchProducts = async () => {
       const response = await fetch(
@@ -37,8 +36,6 @@ const Cart = () => {
       setTotalPrice(total);
     }
   }, [products, productsInCart]);
-  // lista de dependențe, iar dacă aceasta este goală, efectul se va rula doar o singură dată return
-  //useEffect se ruleaza doar la incarcare in pg sau cand se schimba mai multe state-uri, ex. seara se schimba preturile cu alt api
 
   const getProductById = (id) => {
     const product = products.find((product) => product.id === id);
@@ -61,11 +58,10 @@ const Cart = () => {
         currentProduct.qt = currentProduct.qt + 1;
         break;
       case "delete":
-        //prin splice stergem un element din array
         productsInCart.splice(indexOfProductToBeDeleted, 1);
         break;
     }
-    //daca array-ul nu mai are niciun element atunci este scos din localStorage din browser
+
     if (productsInCart.length === 0) {
       localStorage.removeItem("cart");
       setProductsInCart(null);
@@ -75,15 +71,11 @@ const Cart = () => {
     }
   };
 
-  //const productsInCart este o variabila cu acelas nume cu state-ul
-  //nu schimbam starea
-
   const decreaseQuantity = (e) => {
     const productsInCart =
       JSON.parse(window.localStorage.getItem("cart")) ?? [];
     handleProductQuantity(productsInCart, e.target.id, "decrease");
   };
-  // cazul "decrease" din swith
 
   const increaseQuantity = (e) => {
     const productsInCart =
@@ -96,9 +88,7 @@ const Cart = () => {
       JSON.parse(window.localStorage.getItem("cart")) ?? [];
     handleProductQuantity(productsInCart, e.target.id, "delete");
   };
-  //intoarce un div doar daca exista produse in cart, nu sunt null
 
-  //daca exista produce in card
   return products && productsInCart ? (
     <div className="p-10 gap-10 flex flex-col items-center">
       {productsInCart.map((productInCart) => {

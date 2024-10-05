@@ -1,5 +1,6 @@
-import React, { useRef } from "react";
+import { useRef } from "react";
 import emailjs from "@emailjs/browser";
+import { Link } from "react-router-dom";
 
 const Contact = () => {
   const form = useRef();
@@ -79,16 +80,15 @@ const Contact = () => {
                   </svg>
                   <div>
                     <p className="font-serif text-base md:text-lg">
-                      {/* <a href={`mailto:${emailAddress}`}>{emailAddress}</a> */}
                       Catana Roxana
                     </p>
                     <span className="block text-xs uppercase">
-                      <a
+                      <Link
                         href="https://www.linkedin.com/in/roxana-teodora-catana-072313183/"
                         target="_blank"
                       >
                         LinkedIn
-                      </a>
+                      </Link>
                     </span>
                   </div>
                 </li>
@@ -99,13 +99,12 @@ const Contact = () => {
 
               <form ref={form} onSubmit={sendEmail}>
                 <div className="md:col-gap-4 mb-5 grid md:grid-cols-2 ">
-                  {/* <label>Name</label> */}
                   <input
                     className="col-span-1 w-full border-b py-3 text-sm outline-none focus:border-b-2 focus:border-green-700 user_name"
                     type="text"
                     placeholder="Name"
                   />
-                  {/* <label>Email</label> */}
+
                   <input
                     className="col-span-1 w-full border-b py-3 text-sm outline-none focus:border-b-2  focus:border-green-700 user_email"
                     type="email"
@@ -118,7 +117,7 @@ const Contact = () => {
                   rows="6"
                   placeholder="Question"
                 ></textarea>
-                {/* <input type="submit" value="Send" /> */}
+
                 <button
                   type="submit"
                   className="group flex cursor-pointer items-center  bg-green-950 bg-none px-8 py-4 text-center leading-tight text-white  hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-green-300 sm: ml-20"

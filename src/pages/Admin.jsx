@@ -7,7 +7,7 @@ const Admin = () => {
     description: "",
     imageURL: "",
   });
-  //currentProductId, setCurrentProductId state pentru delete button
+
   const [currentProductId, setCurrentProductId] = useState("");
   const [products, setProducts] = useState(null);
 
