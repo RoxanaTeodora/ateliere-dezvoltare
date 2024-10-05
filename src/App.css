@@ -1,0 +1,44 @@
+#root {
+  max-width: 1712px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.navbar {
+  background: #e87d5a;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.35);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+}
+
+.navbar li {
+  list-style: none;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+  padding: 16px;
+}
+
+.navbar a,
+.navbar a:hover,
+.navbar a:focus,
+.navbar a:active {
+  text-decoration: none;
+}
+
+.user {
+  display: flex;
+  gap: 0.1rem;
+  padding: 0.1rem;
+}
+
+.admin {
+  margin-left: auto;
+  margin-right: 10px;
+}
