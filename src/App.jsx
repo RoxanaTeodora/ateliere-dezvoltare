@@ -11,6 +11,7 @@ const Details = lazy(() => import("./pages/Details"));
 const Admin = lazy(() => import("./pages/Admin"));
 const About = lazy(() => import("./pages/About"));
 const Contact = lazy(() => import("./pages/Contact"));
+const SignUp = lazy(() => import("./pages/SignUp"))
 
 const App = () => {
   return (
@@ -24,6 +25,7 @@ const App = () => {
           <Route path="/details/:id" element={<Details />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/signup" element={<SignUp />} />
         </Routes>
       </Suspense>
       <Footer />
