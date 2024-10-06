@@ -31,4 +31,3 @@
     - User, Event, Request
   - Ingest data
 - Hosting on git
-  
