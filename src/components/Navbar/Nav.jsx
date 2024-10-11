@@ -22,8 +22,11 @@ const Nav = () => {
           <li className="admin">
             <Link to="/admin">Admin</Link>
           </li>
-          <li className="test">
+          <li className="signup">
             <Link to="/signup">Sign Up</Link>
+          </li>
+          <li className="signin">
+            <Link to="/signin">Sign In</Link>
           </li>
         </ul>
       </nav>
